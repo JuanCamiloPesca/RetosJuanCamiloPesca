@@ -48,9 +48,7 @@ public class AuditorioServicio {
                 if (auditorio.getDescription()!=null) {
                     consulta.get().setDescription(auditorio.getDescription());
                 }
-                if (auditorio.getCategory()!=null) {
-                    consulta.get().setCategory(auditorio.getCategory());
-                }
+                
 
                 return auditorioRepositorio.save(consulta.get());                
             }
