@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+    <script src="jsCliente/crearCliente.js"></script>
+    <script src="jsCliente/listarClientes.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    
+    <h1>Gestion de Cliente</h1>
+    <!-- Desplegar campos de texto para que el usuario pueda ingresar los valores del cliente -->
+    <input type="text" id="clientEmail" placeholder="Email"> <!-- Ingresar Nombre del cliente-->
+    <input type="text" id="clientPassword" placeholder="Password"> <!-- Ingresar email del cliente-->
+    <input type="text" id="clientName" placeholder="Name"> <!-- Ingresar Nombre del cliente-->
+    <input type="number" id="clientAge" placeholder="Age"> <!-- Ingresar Edad del cliente-->
+    <button onClick="crearCliente()" id="btnRegistrarCliente">Registrar Cliente</button> <!-- Boton Registrar Cliente-->
+    <button onClick="listarClientes()" id="btnListarCliente">Listar</button> <!-- Boton Listar Cliente-->
+
+    <div id="listarClientes"></div> <!-- Instruccion Pintar lista Cliente -->
+    <a href="index.html">Volver A Menu</a>
+</body>
+</html>

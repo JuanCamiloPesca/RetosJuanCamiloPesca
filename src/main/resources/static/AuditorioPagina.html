@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <title>Auditorios</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Se cargan las librerias -->
+    <script src="jsAuditorio/crearAuditorio.js"></script>
+    <script src="jsAuditorio/listarAuditorios.js"></script>
+    
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <h1>Gestión de Auditorios</h1>
+    <!--<input type="number" id="audienceId" placeholder="Id"> Se inhabilita Ingresar ID del auditorio porque el usuario no puede verlo-->
+    <input type="text" id="name" placeholder="Name"> <!-- Ingresar Nombre del auditorio-->
+    <input type="text" id="owner" placeholder="Owner"> <!-- Ingresar Owner del auditorio-->
+    <input type="number" id="capacity" placeholder="Capacity"> <!-- Ingresar Capacidad del auditorio-->
+    <input type="text" id="description" placeholder="Description"> <!-- Ingresar Descripcion del auditorio-->
+    <input type="number" id="category_Id" placeholder="Category_ID"> <!-- Ingresar Categoria del auditorio-->
+    
+    <button onClick="crearAuditorio()" id="btnCrearAuditorio">Crear Auditorio</button> <!-- Boton Crear auditorio-->
+    
+    <button onClick="listarAuditorios()" id="btnListarAuditorio">Listar</button> <!-- boton Listar auditorio-->
+
+    <div id="listaAuditorios"></div> <!-- Instruccion Pintar lista Auditorios -->
+
+    <a href="index.html">Volver A Menu</a>
+</body>
+</html>

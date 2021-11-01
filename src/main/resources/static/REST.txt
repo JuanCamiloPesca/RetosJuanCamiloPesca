@@ -1,0 +1,108 @@
+audience
+
+//GET
+SELECT * FROM AUDITORIO
+
+//POST
+BEGIN
+    INSERT INTO AUDITORIO
+    (ID,OWNER,CAPACITY,CATEGORY_ID,NAME)
+    VALUES(:id,:owner,:capacity,:category_id,:name);
+    :status_code:=201;
+END;
+
+//PUT
+BEGIN
+    UPDATE AUDITORIO
+    SET OWNER= :owner, CAPACITY= :capacity, CATEGORY_ID= :category_id, NAME= :name
+    WHERE ID= :id;
+    :status_code:=201;
+END;
+
+//DELETE
+BEGIN
+    DELETE FROM AUDITORIO
+    WHERE ID= :id;
+    :status_code:=204;
+END;
+
+client
+
+//GET
+SELECT * FROM CLIENT
+
+//POST
+BEGIN
+    INSERT INTO CLIENT
+    (ID,NAME,EMAIL,AGE)
+    VALUES(:id,:name,:email,:age);
+    :status_code:=201;
+END;
+
+//PUT
+BEGIN
+    UPDATE CLIENT
+    SET NAME= :name, EMAIL= :email, AGE= :age
+    WHERE ID= :id;
+    :status_code:=201;
+END;
+
+//DELETE
+BEGIN
+    DELETE FROM CLIENT
+    WHERE ID= :id;
+    :status_code:=204;
+END;
+
+message
+
+//GET
+SELECT * FROM MESSAGE
+
+//POST
+BEGIN
+    INSERT INTO MESSAGE
+    (ID,MESSAGETEXT)
+    VALUES(:id,:messagetext);
+    :status_code:=201;
+END;
+
+//PUT
+BEGIN
+    UPDATE MESSAGE
+    SET MESSAGETEXT= :messagetext
+    WHERE ID= :id;
+    :status_code:=201;
+END;
+
+//DELETE
+BEGIN
+    DELETE FROM MESSAGE
+    WHERE ID= :id;
+    :status_code:=204;
+END;
+//GET
+SELECT * FROM MESSAGE
+
+//POST
+BEGIN
+    INSERT INTO MESSAGE
+    (ID,MESSAGETEXT)
+    VALUES(:id,:messagetext);
+    :status_code:=201;
+END;
+
+//PUT
+BEGIN
+    UPDATE MESSAGE
+    SET MESSAGETEXT= :messagetext
+    WHERE ID= :id;
+    :status_code:=201;
+END;
+
+//DELETE
+BEGIN
+    DELETE FROM MESSAGE
+    WHERE ID= :id;
+    :status_code:=204;
+END;

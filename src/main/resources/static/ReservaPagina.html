@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="jsReservas/crearReservas.js"></script>
+    <script src="jsReservas/listarReservas.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <!-- Desplegar campos de texto para que el usuario pueda ingresar los valores del reservaciones -->
+    <h1> Gestion de Mensajes</h1>
+    <input type="date" id="startDate" placeholder="Fecha Inicial"> <!-- ingresa fecha de la reserva-->
+    <input type="date" id="devolutionDate" placeholder="Fecha Final"> <!-- ingresa fecha final de la reserva -->
+    <input type="number" id="idClient" placeholder="Client Id">
+    <input type="number" id="idAudience" placeholder="Audience Id">
+    <button onClick="crearReservas()" id="btnRegistrarReserva">Registrar</button> <!-- Boton Registrar reserva-->
+    <button onClick="listarReservas()" id="btnListarReserva">Listar</button> <!-- Boton Listar reserva-->
+    
+    <div id="listarReservas"></div> <!-- Listar reserva -->
+    <a href="index.html">Volver A Menu</a>
+</body>
+</html>

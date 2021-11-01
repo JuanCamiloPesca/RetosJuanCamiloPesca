@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Se cargan las librerias -->
+    <script src="jsCategoria/crearCategoria.js"></script>
+    <script src="jsCategoria/listarCategoria.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</head>
+<body>
+    <h1>Gestion de Categorias</h1>
+    <!--<input type="number" id="audienceId" placeholder="Id"> Se inhabilita Ingresar ID del auditorio porque el usuario no puede verlo-->
+    
+    <input type="text" id="categoryName" placeholder="Name"> <!-- Ingresar Nombre del auditorio-->
+    <input type="text" id="categoryDescription" placeholder="Owner"> <!-- Ingresar Owner del auditorio-->
+    <button onClick="crearCategoria()" id="btnCrearCategoria">Crear Categoria</button> <!-- Boton Crear auditorio-->
+    <button onClick="listarCategoria()" id="btnListarCategoria">Listar</button> <!-- boton Listar auditorio-->
+    
+    <div id="listaCategory"></div> <!-- Instruccion Pintar lista Auditorios -->
+
+    <a href="index.html">Volver A Menu</a>
+</body>
+</html>
