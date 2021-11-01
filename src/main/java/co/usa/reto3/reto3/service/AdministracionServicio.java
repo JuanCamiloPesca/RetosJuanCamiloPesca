@@ -32,4 +32,26 @@ public class AdministracionServicio {
             }
         }
     }
+    public Administracion update(Administracion administracion){
+        if (administracion.getId()!=null) {
+            Optional<Administracion> consulta=administracionRepositorio.getAdministracion(administracion.getId());
+            if (!consulta.isEmpty()) {
+                
+                return administracionRepositorio.save(consulta.get());                
+            }
+            
+        }
+        return administracion;
+
+    }
+
+    public boolean deleteAdministracion(int id){
+        Optional<Administracion> consulta=administracionRepositorio.getAdministracion(id);
+        if (!consulta.isEmpty()) {
+            administracionRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
+    }
 }

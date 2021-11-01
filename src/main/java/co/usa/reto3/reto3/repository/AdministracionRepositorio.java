@@ -25,5 +25,7 @@ public class AdministracionRepositorio {
     {
         return administracionCrudRepositorio.save(administracion);
     }
-
+    public void delete(Administracion administracion){
+        administracionCrudRepositorio.delete(administracion);
+    }
 }

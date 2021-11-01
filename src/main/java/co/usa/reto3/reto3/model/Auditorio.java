@@ -6,6 +6,11 @@ import java.util.List;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+/**
+ * 
+ * @Autor Juan Camilo Pesca
+ */
 // Generamos la clase principal modelo Auditorio, marcamos la entidad y nombramos la tabla
 @Entity
 @Table(name="audience")

@@ -25,5 +25,7 @@ public class CalificacionRepositorio {
     {
         return calificacionCrudRepositorio.save(calificacion);
     }
-
+    public void delete(Calificacion calificacion){
+        calificacionCrudRepositorio.delete(calificacion);
+    }
 }

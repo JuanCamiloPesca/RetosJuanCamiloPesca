@@ -32,4 +32,26 @@ public class CalificacionServicio {
             }
         }
     }
+    public Calificacion update(Calificacion calificacion){
+        if (calificacion.getId()!=null) {
+            Optional<Calificacion> consulta=calificacionRepositorio.getCalificacion(calificacion.getId());
+            if (!consulta.isEmpty()) {
+                
+                return calificacionRepositorio.save(consulta.get());                
+            }
+            
+        }
+        return calificacion;
+
+    }
+
+    public boolean deleteCalificacion(int id){
+        Optional<Calificacion> consulta=calificacionRepositorio.getCalificacion(id);
+        if (!consulta.isEmpty()) {
+            calificacionRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
+    }
 }

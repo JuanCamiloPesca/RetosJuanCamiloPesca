@@ -37,19 +37,33 @@ public class CategoryServicio {
     }
 
     public Category update(Category category){
-        if(category.getId()!=null){
-            Optional<Category>g=categoryRepositorio.getCategory(category.getId());
-            if(!g.isEmpty()){
-                if(category.getDescription()!=null){
-                    g.get().setDescription(category.getDescription());
+        if (category.getId()!=null) {
+            Optional<Category> consulta=categoryRepositorio.getCategory(category.getId());
+            if (!consulta.isEmpty()) {
+                if (category.getName()!=null) {
+                    consulta.get().setName(category.getName());                    
                 }
-                if(category.getName()!=null){
-                    g.get().setName(category.getName());
+                if (category.getDescription()!=null) {
+                    consulta.get().setDescription(category.getDescription());
+                    
                 }
-                return categoryRepositorio.save(g.get());
+
+                return categoryRepositorio.save(consulta.get());                
             }
+            
         }
         return category;
+
+    }
+
+    public boolean deleteCategory(int id){
+        Optional<Category> consulta=categoryRepositorio.getCategory(id);
+        if (!consulta.isEmpty()) {
+            categoryRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
     }
 
     

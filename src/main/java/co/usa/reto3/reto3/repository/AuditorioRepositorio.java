@@ -25,4 +25,7 @@ public class AuditorioRepositorio {
     {
         return auditorioCrudRepositorio.save(auditorio);
     }
+    public void delete(Auditorio auditorio){
+        auditorioCrudRepositorio.delete(auditorio);
+    }
 }
