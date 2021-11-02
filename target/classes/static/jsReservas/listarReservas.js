@@ -69,5 +69,6 @@ function limpiarCamposReservas(){
     document.querySelector("#devolutionDate").value = '';
     document.querySelector("#idClient").value = '';
     document.querySelector("#idAudience").value = '';
+    document.querySelector("#status").value = '';
 
 }

@@ -9,7 +9,7 @@ function crearReservas() {
     var datos={
         startDate:$("#startDate").val(),
         devolutionDate:$("#devolutionDate").val(),
-        status:("Created"),
+        status:$("#status").val(),
         client:datos2,
         audience:datos3,
     }

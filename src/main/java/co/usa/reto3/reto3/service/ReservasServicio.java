@@ -52,6 +52,9 @@ public class ReservasServicio {
                 if (reservas.getDevolutionDate()!=null) {
                     consulta.get().setDevolutionDate(reservas.getDevolutionDate());                    
                 }
+                if (reservas.getStatus()!=null) {
+                    consulta.get().setStatus(reservas.getStatus());                    
+                }
                 
                 return reservasRepositorio.save(consulta.get());                
             }
@@ -103,3 +106,5 @@ public class ReservasServicio {
     }
 
 }
+
+

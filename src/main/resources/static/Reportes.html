@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="jsReportes/reportes.js"></script>
+    <script src="jsReportes/listarReporteFechas.js"></script>
+</head>
+<body>
+    <h1> Reportes</h1>
+    <h2> Reportes por fechas</h2>
+    <input type="date" id="startDate" placeholder="startDate"> <!-- Ingresar valor -->
+    <input type="date" id="endDate" placeholder="endDate"> <!-- Ingresar valor -->
+    <button onClick="reporteFechas()" id="btnReporteFechas">Generar reporte fechas</button>
+
+    <div id="listarResporteFechas"></div>
+
+    <h2> Reportes por estado</h2>
+    <button onClick="reporteEstado()" id="btnReporteEstado">Generar reporte estado</button>
+    
+    <div id="listarEstado"></div>
+
+    <h2> Reportes por Cliente</h2>
+    <button onClick="reporteClientes()" id="btnReporteClientes">Generar reporte Clientes</button>
+    
+    <div id="listarClientes"></div>
+    <a href="index.html">Volver A Menu</a>
+</body>
+</html>
