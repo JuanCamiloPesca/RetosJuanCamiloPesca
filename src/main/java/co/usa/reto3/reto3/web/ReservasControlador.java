@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.usa.reto3.reto3.model.Reservas;
+import co.usa.reto3.reto3.model.reportes.ContEstadosReservas;
+import co.usa.reto3.reto3.model.reportes.ContReservas;
 import co.usa.reto3.reto3.service.ReservasServicio;
 
 @RestController
@@ -53,4 +55,20 @@ public class ReservasControlador {
         return reservasServicio.deleteReservas(id);
 
     }
+
+    @GetMapping("/report-status")
+    public ContEstadosReservas getReporteStatus(){
+        return reservasServicio.getReporteStatus();
+    }
+
+    @GetMapping("/report-clients")
+    public List<ContReservas> getTopClientes(){
+        return reservasServicio.getTopClientes();
+    }
+
+    @GetMapping("/report-dates/{fechaIni}/{fechaFin}")
+    public List<Reservas> getReservasFechas(@PathVariable("fechaIni") String fecha1, @PathVariable("fechaFin") String fecha2){
+        return reservasServicio.getReservasFechas(fecha1, fecha2);
+    }
+
 }

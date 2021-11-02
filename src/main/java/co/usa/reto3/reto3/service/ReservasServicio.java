@@ -1,5 +1,9 @@
 package co.usa.reto3.reto3.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.usa.reto3.reto3.model.Reservas;
+import co.usa.reto3.reto3.model.reportes.ContEstadosReservas;
+import co.usa.reto3.reto3.model.reportes.ContReservas;
 import co.usa.reto3.reto3.repository.ReservasRepositorio;
 
 @Service
@@ -64,4 +70,36 @@ public class ReservasServicio {
         }
         return false;
     }
+
+    public List<ContReservas> getTopClientes(){
+        return reservasRepositorio.getTopClientes();
+    }
+
+    public ContEstadosReservas getReporteStatus(){
+        List<Reservas> completed=reservasRepositorio.getReservasPorStatus("completed");
+        List<Reservas> cancelled=reservasRepositorio.getReservasPorStatus("cancelled");
+
+        ContEstadosReservas reporteEstado= new ContEstadosReservas(completed.size(),cancelled.size());
+    
+        return reporteEstado;
+    }
+
+    public List<Reservas> getReservasFechas(String fecha1, String fecha2){
+        SimpleDateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaIni=new Date();
+        Date fechaFin=new Date();
+
+        try{
+            fechaIni=formato.parse(fecha1);
+            fechaFin=formato.parse(fecha2);
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+        if(fechaIni.before(fechaFin)){
+            return reservasRepositorio.getReservasFechas(fechaIni, fechaFin);
+        }else{
+            return new ArrayList<>();
+        }
+    }
+
 }

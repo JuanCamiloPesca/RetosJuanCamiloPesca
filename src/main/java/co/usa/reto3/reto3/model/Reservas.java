@@ -16,7 +16,7 @@ public class Reservas implements Serializable{
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status = "created";
+    private String status;
     
     //Generamos la relación con las tablas y definimos ignorar el Json para evitar lectura en bucle
     @ManyToOne
